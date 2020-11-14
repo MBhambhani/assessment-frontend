@@ -1,2 +1,301 @@
 // Style files in the pods folder are automatically loaded in.
 @import 'pod-styles';
+@import url(https://fonts.googleapis.com/css?family=Quantico:400,700);
+
+/* Colours */
+$dark-navy: #0d3244;
+$navy: #07495f;
+$blue: #0e99b8;
+$light-blue: #f6fafd;
+$green: #11b285;
+$background-grey: #cfd6dc;
+
+/* Fonts */
+$primary-font: 'Quantico', sans-serif;
+$secondary-font: 'Source Sans Pro', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: none;
+}
+
+.content {
+    background-color: white;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $primary-font;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: $dark-navy;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.navbar i {
+    padding: 10px 20px;
+}
+
+.navbar span {
+    background-color: $navy;
+}
+
+.navbar-centered {
+    flex: 6 1 auto;
+}
+
+.navbar button {
+    color: white;
+    font-family: $secondary-font;
+    font-size: 12px;
+    padding: 0px 20px 10px 0px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: $primary-font;
+    font-size: 21px;
+    background-color: $navy;
+}
+
+.page-title img {
+    width: 55px;
+    margin: 18px 12px 18px 20px;
+}
+
+.main-content {
+    display: flex;
+}
+
+.datasets {
+    flex: 1 1 auto;
+    background-color: $light-blue;
+}
+
+.datasets h3 {
+    padding: 32px 0px 18px 22px;
+    color: darken(lightgrey, 25%);
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.datasets table {
+    display: block;
+    overflow: auto;
+    max-width: 960px;
+    margin: 0px 20px 20px 20px;
+    border: 1.5px solid lightgrey;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.datasets td {
+    font-size: 10px;
+    font-family: $secondary-font;
+    padding: 12px 20px 3px 10px;
+    border-bottom: 1px solid lighten(lightgrey, 10%);
+}
+
+.dataset-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin: 0px 20px;
+    padding: 16px 30px 16px 16px;
+    color: $dark-navy;
+    background-color: white;
+    border: 1.5px solid lightgrey;
+    border-bottom: 0;
+}
+
+.dataset-header a {
+    color: $blue;
+}
+
+.top-row {
+    font-weight: bold;
+    background-color: $light-blue;
+}
+
+.top-row td {
+    padding-bottom: 8px;
+}
+
+.sidebar {
+    flex: 1 1 auto;
+    min-width: 400px;
+    padding: 10px 20px 0px 28px;
+    border-left: 1.5px solid lightgrey;
+    color: $dark-navy;
+}
+
+.sidebar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sidebar h4 {
+    font-size: 12px;
+    font-family: $secondary-font;
+    display: inline-block;
+    color: $green;
+    padding: 3px 5px;
+    margin-top: 10px;
+    border: 2px solid $green;
+    border-radius: 3px;
+}
+
+.sidebar h3 {
+    font-size: 13px;
+    padding-top: 16px;
+}
+
+.sidebar p {
+    font-family: $secondary-font;
+    padding: 5px 0px 20px 0px;
+}
+
+.sidebar tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+
+.sidebar tr :not(.last) {
+    border-bottom: 1px solid lightgrey;
+}
+
+.sidebar-table-left {
+    font-family: $secondary-font;
+    font-size: 11px;
+    font-weight: bold;
+    color: darken(lightgrey, 10%);
+}
+
+.sidebar span {
+    color: $blue;
+}
+
+.sidebar-api {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border: 1px solid $blue;
+}
+
+.sidebar-api span {
+    padding: 3px 10px;
+}
+
+.sidebar button {
+    width:100%;
+    color: white;
+    padding: 5px 0px;
+    margin-top: 30px;
+    font-family: $primary-font;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: $blue;
+}
+
+.show-background {
+    background-color: $background-grey;
+}
+
+.show-page-title {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 0px;
+    border: none;
+    font-family: $primary-font;
+    font-size: 10px;
+    background-color: $navy;
+}
+
+.show-page-title i {
+    color:white;
+    padding-left: 10px;
+    font-size: 36px;
+}
+
+.product-data-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: $primary-font;
+    font-size: 18px;
+    padding: 16px 20px 16px 16px;
+    color: $dark-navy;
+    border-bottom: 1.5px solid lightgrey;
+}
+
+.product-data-header button {
+    margin-left: 20px;
+    font-family: $primary-font;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.product-data-header i {
+    font-size: 14px;
+    color: lighten($blue, 10%);
+}
+
+.coverage-button {
+    border: 1px solid $blue;
+    color: $blue;
+}
+
+.download-button {
+    background-color: $blue;
+    color: white;
+}
+
+.expanded-table-options {
+    padding-left: 30px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.expanded-table-options button {
+    color: darken(lightgrey, 20%);
+    font-family: $secondary-font;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 20px 40px 20px 0px;
+}
+
+.expanded-table {
+    font-family: $secondary-font;
+    font-size: 12px;
+    display: block;
+    overflow: auto;
+    max-width: 1440px;
+    max-height: 600px;
+    border-collapse: collapse;
+}
+
+.expanded-table td {
+    padding: 12px 20px 3px 10px;
+    border-right: 1px solid lighten(lightgrey, 10%);
+    border-bottom: 1px solid lighten(lightgrey, 10%);
+}
+
+.first-col {
+    padding-right: 0px !important;
+    background-color: $light-blue;
+}

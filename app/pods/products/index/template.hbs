@@ -1,17 +1,125 @@
-<h3>Product Page - Index - {{@publisher.title}}</h3>
+<div class="content">
 
-{{#each products as |product|}}
-  <h4><LinkTo @route="products.show" @model={{product.id}}>{{product.name}}</LinkTo></h4>
+  <nav class="navbar">
+    <div class="navbar-left">
+        <i class="material-icons" {{action 'click' 'menu'}}>menu</i>
+        <button {{action 'click' 'ALTERNATIVE DATA'}}>ALTERNATIVE DATA</button>
+        <button {{action 'click' 'CORE FINANCIAL DATA'}}>CORE FINANCIAL DATA</button>
+    </div>
+    
+    <div class="navbar-centered">
+        <img src='assets/quandl-logo.svg' atl="quandl logo">
+    </div>
+    
+    <div class="navbar-right">
+        <button {{action 'click' 'DOCS & HELP'}}>DOCS &amp; HELP</button>
+        <button {{action 'click' 'BLOG'}}>BLOG</button>
+        <button {{action 'click' 'SIGN IN'}}>SIGN IN</button>
+    </div>
+  </nav>
 
-  <table>
-    {{#each product.productDataSubset as |data|}}
-      <tr>
-        <td>{{data.ticker}}</td>
-        <td>{{data.comp_name}}</td>
-        <td>{{data.per_end_date}}</td>
-      </tr>
-    {{/each}}
-  </table>
-{{/each}}
+  <div class="page-title">
+    <img src='assets/avatar.png' alt="avatar">
+    <h2>Data Publisher</h2>
+  </div>
+  
+  <div class="main-content">
+    <div class="datasets">
+      <h3>DATASETS IN THIS DATA PRODUCT</h3>
 
-{{outlet}}
+      {{#each products as |product|}}
+        <div class="dataset-header">
+          <h4>{{product.name}}</h4>
+          <h4><LinkTo @route="products.show" @model={{product.id}}>EXPAND</LinkTo></h4>
+        </div>
+
+        <table>
+          <tr class="top-row">
+            <td>m_ticker</td>
+            <td>ticker</td>
+            <td>comp_name</td>
+            <td>comp_name_2</td>
+            <td>exchange</td>
+            <td>currency_code</td>
+            <td>per_end_date</td>
+            <td>per_type</td>
+            <td>per_code</td>
+            <td>per_fisc_year</td>
+            <td>per_fisc_qtr</td>
+            <td>per_cal_year</td>
+            <td>per_cal_qtr</td>
+            <td>rev_type</td>
+            <td>rev_type_desc</td>
+            <td>broker_name</td>
+            <td>analyst_name</td>
+            <td>eps_rev_date</td>
+            <td>eps_rev_est</td>
+            <td>eps_rev_date_prev</td>
+            <td>eps_rev_est_prev</td>
+          </tr>
+          {{#each product.productDataSubset as |data|}}
+            <tr>
+              <td>{{data.m_ticker}}</td>
+              <td>{{data.ticker}}</td>
+              <td>{{data.comp_name}}</td>
+              <td>{{data.comp_name_2}}</td>
+              <td>{{data.exchange}}</td>
+              <td>{{data.currency_code}}</td>
+              <td>{{data.per_end_date}}</td>
+              <td>{{data.per_type}}</td>
+              <td>{{data.per_code}}</td>
+              <td>{{data.per_fisc_year}}</td>
+              <td>{{data.per_fisc_qtr}}</td>
+              <td>{{data.per_cal_year}}</td>
+              <td>{{data.per_cal_qtr}}</td>
+              <td>{{data.rev_type}}</td>
+              <td>{{data.rev_type_desc}}</td>
+              <td>{{data.broker_name}}</td>
+              <td>{{data.analyst_name}}</td>
+              <td>{{data.eps_rev_date}}</td>
+              <td>{{data.eps_rev_est}}</td>
+              <td>{{data.eps_rev_date_prev}}</td>
+              <td>{{data.eps_rev_est_prev}}</td>
+            </tr>
+          {{/each}}
+        </table>
+      {{/each}}
+
+      {{outlet}}
+    </div>
+
+    <div class="sidebar">
+      <h4>COMMERCIAL DATA</h4>
+      <h3>DATA OVERVIEW</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</p>
+      <table>
+        <tr>
+          <td class="sidebar-table-left">DELIVERY FREQUENCY <span>&#9432;</span></td>
+          <td>Daily</td>
+        </tr>
+        <tr>
+          <td class="sidebar-table-left">DATA FREQUENCY <span>&#9432;</span></td>
+          <td>Daily</td>
+        </tr>
+        <tr>
+          <td class="sidebar-table-left">REPORTING LAG <span>&#9432;</span></td>
+          <td>Daily</td>
+        </tr>
+        <tr>
+          <td class="sidebar-table-left">HISTORY <span>&#9432;</span></td>
+          <td>Nov 2005</td>
+        </tr>
+        <tr class="last">
+          <td class="sidebar-table-left">COVERAGE <span>&#9432;</span></td>
+          <td>5,000+ companies, 59 indicators</td>
+        </tr>
+      </table>
+      <div class="sidebar-api">
+        <span>Tables API</span>
+        <span>&#9432;</span>
+      </div>
+      <button {{action 'click' 'PRICING'}}>PRICING</button>
+    </div>
+  </div>
+
+</div>
